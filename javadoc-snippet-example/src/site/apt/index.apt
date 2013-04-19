@@ -1,0 +1,73 @@
+javadoc-snippet Example Usage
+
+* What we're hoping for...
+
+ We can put APT formatting in our comments. We might have
+
+ * A
+
+ * list
+
+ * of
+
+ * things
+
+ ---
+ or some verbatim text
+ ---
+
+ or perhaps even <italic> and <<bold>> formatting
+
+ But, most importantly, we can add our comments into our Maven site, giving them context and value.
+
+* Setting up the Javadoc snippet
+
+ The javadoc-snippet plugin is based on the standard doxia snippet plugin. Snippets are defined in exactly the same way.
+
+ For example, the snippet used to generate the examples below is:
+
+%{snippet|id=example|file=src/main/java/uk/co/dantwining/App.java}
+
+* Standard output from the snippet macro
+
+ Please refer to the Snippet Macro documentation for including snippets in your APT pages. The standard snippet macro looks something like:
+
++--
+ %{snippet|id=sample|file=...
++--
+
+ Using this built-in doxia snippet macro, the output for our sample snippet is:
+
+%{snippet|id=sample|file=src/main/java/uk/co/dantwining/App.java}
+
+* Standard output using the javadoc-snippet plugin
+
+ To render the same snippet using the javadoc-snippet plugin, change the name of the macro to:
+
++--
+ %{javadoc-snippet|id=sample|file=...
++--
+
+ Using the javadoc-snippet macro, the output for our sample snippet is now:
+
+%{javadoc-snippet|id=sample|file=src/main/java/uk/co/dantwining/App.java}
+
+* Formatted output using the javadoc-snippet plugin
+
+ To render the same snippet as non-verbatim text, and without the surrounding box, add the verbatim=false parameter to the macro declaration:
+
++--
+ %{javadoc-snippet|verbatim=false|id=sample|file=...
++--
+
+ Using the javadoc-snippet macro with verbatim=false, the output for our sample snippet is now:
+
+%{javadoc-snippet|verbatim=false|id=sample|file=src/main/java/uk/co/dantwining/App.java}
+
+ This allows you to use APT formatting in your javadoc comments, and have them render correctly in your maven site.
+
+To Do
+
+ * Actually test some APT formatting in the javadoc comment
+
+ * Make javadoc links work (in the same way that Javadoc links itself)
