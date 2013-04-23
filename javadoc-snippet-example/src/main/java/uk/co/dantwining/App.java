@@ -5,21 +5,19 @@ package uk.co.dantwining;
 /**
  * Hello world!
  *
- * We can put APT formatting in our comments. We might have
+ * We can put HTML formatting in our comments. We might have
+ * <ul>
+ *     <li>A</li>
+ *     <li>list</li>
+ *     <li>of</li>
+ *     <li>things</li>
+ * </ul>
  *
- * * A
+ * or <code>some verbatim text</code>
  *
- * * list
- *
- * * of
- *
- * * things
- *
- * ---
- * or some verbatim text
- * ---
- *
- * or perhaps even <b>italic</b> and <i>bold</i> formatting
+ * or perhaps even <b>italic</b> and <i>bold</i> formatting, spread over
+ * <p>
+ * a couple of paragraphs.
  *
  * But, most importantly, we can add our comments into our Maven site, giving them context and value.
  *
